@@ -7,10 +7,6 @@ const PORT = process.env.PORT || 3000
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 
-app.get('/', (req, res) => {
-    res.send('Hola')
-})
-
 app.post('/create/user', (req, res) => {
     const {name, nickname, image} = req.body
     const newUser = User({
