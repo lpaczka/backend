@@ -2,10 +2,12 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const {Post,User} = require('./modules/index')
 const app = express()
+const cors = require('cors')
 const PORT = process.env.PORT || 3000
 
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
+app.use(cors())
 
 app.post('/create/user', (req, res) => {
     const {name, nickname, image} = req.body
