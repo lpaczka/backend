@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
-    res.send(console.log('Holi'))
+    res.send('Hola')
 })
 
 app.post('/create/user', (req, res) => {
