@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const {Post,User} = require('./modules/index')
 const app = express()
+const PORT = process.env.PORT || 3000
 
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
@@ -99,6 +100,6 @@ app.delete('/delete/post/:uid', (req, res) => {
         res.status(400).send(err)
     })
 })
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log('servidor on')
 })
