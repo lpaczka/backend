@@ -23,7 +23,7 @@ app.post('/create/user', (req, res) => {
     })
 })
 
-app.get('/get/users', (req, res) => {
+app.get('/get/users/', (req, res) => {
     User.find().exec()
     .then(post => {
         res.status(200).send(post)
